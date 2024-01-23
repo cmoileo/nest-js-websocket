@@ -1,3 +1,4 @@
+import { ROLES_ENUM } from "src/types/user/user";
 import { TimestampEntites } from "../../Generic/timestamp.entites";
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
@@ -13,4 +14,10 @@ export class UserEntity extends TimestampEntites {
 
     @Column()
     password: string;
+
+    @Column({
+        type: "enum",
+        enum: ROLES_ENUM,
+    })
+    role: ROLES_ENUM
 }
