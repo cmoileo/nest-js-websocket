@@ -9,8 +9,8 @@ async function bootstrap() {
     { path: '/' , method: RequestMethod.GET}
   ]});
   app.enableCors({
-    origin: "*",
-    methods: ["GET", "POST","PATCH","DELETE","PUT"],
+    origin: '*',
+    methods: ['GET', 'POST', 'PATCH', 'DELETE', 'PUT'],
   });
   await app.listen(port);
 }

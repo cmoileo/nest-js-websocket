@@ -16,6 +16,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       synchronize: true,
       autoLoadEntities: true,
     }),
-  ]
+  ],
 })
 export class DatabaseConfigModule {}

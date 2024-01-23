@@ -8,9 +8,9 @@ network:
 
 .PHONY: down
 down:
-	docker stop api-meeting
-	docker rm api-meeting
-	docker rmi api-meeting
+	docker stop
+	docker rm
+	docker rmi
 	
 
 .PHONY: reset

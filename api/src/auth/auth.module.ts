@@ -10,16 +10,14 @@ import { UserModule } from 'src/user/user.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    PassportModule.register(
-      { defaultStrategy: 'jwt' }
-    ),
+    PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.register({
-        secret: process.env.JWT_SECRET,
-        signOptions: { expiresIn: '3600s' },
+      secret: process.env.JWT_SECRET,
+      signOptions: { expiresIn: '3600s' },
     }),
-    UserModule
+    UserModule,
   ],
   controllers: [AuthController],
-  providers: [AuthService, JwtStrategy]
+  providers: [AuthService, JwtStrategy],
 })
 export class AuthModule {}
