@@ -1,10 +1,10 @@
 import socket from "../utils/socket"
 
-const sendChatMessage = async (e: FormDataEvent) => {
+const sendChatMessage = async (e: FormDataEvent, room: string) => {
     e.preventDefault()
     socket.emit("chat", {
         message: e.target[0].value,
-        username: "ern2"
+        room: room
     })
 }
 
