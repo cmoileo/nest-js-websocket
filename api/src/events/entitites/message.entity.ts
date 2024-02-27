@@ -1,6 +1,7 @@
 import { TimestampEntites } from '../../Generic/timestamp.entites';
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { UserEntity } from '../../user/entities/user.entity';
+import { RoomEntity } from './room.entity';
 
 @Entity('message')
 export class MessageEntity extends TimestampEntites {
@@ -16,4 +17,10 @@ export class MessageEntity extends TimestampEntites {
 
   @Column()
   message: string;
+
+  @Column({ nullable: true })
+  roomName: string;
+
+  @ManyToOne(() => RoomEntity, (room) => room.messages, { nullable: true })
+  room: RoomEntity;
 }
